@@ -4,7 +4,7 @@ version = '0.1'
 
 setup(name='Cert Check',
       version=version,
-      description="Serve apple space content",
+      description="Check validatity of cert",
       long_description="""\
 """,
       classifiers=[],
@@ -13,7 +13,7 @@ setup(name='Cert Check',
       author_email='sri',
       url='',
       license='',
-      packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
+      packages=find_packages(exclude=['tests']),
       include_package_data=True,
       zip_safe=False,
       install_requires=[

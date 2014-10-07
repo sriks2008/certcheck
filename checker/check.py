@@ -11,7 +11,10 @@ def main():
 
     print "Values for %s and %s" % (fileName, privateKeyPassword)
 
-    p12 = load_pkcs12(file(fileName, 'rb').read(), privateKeyPassword)
+    try:
+        p12 = load_pkcs12(file(fileName, 'rb').read(), privateKeyPassword)
+    except Error as e:
+        sys.exit(e.message)
 
     print "read certificate"
     p12.get_certificate() 
@@ -20,6 +23,10 @@ def main():
     p12.get_privatekey()
 
     print "read ca certificates"
-    p12.get_ca_certificates()
+    cacerts = p12.get_ca_certificates()
 
+    if cacerts is None:
+        sys.exit("Cert chain is empty. INVALID CERT")
+    else:
+        print "VALID CERT"
 
