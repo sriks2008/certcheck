@@ -1,7 +1,7 @@
 Check the contents of a PKcs12 file.
 
-pip install -e .
+1. pip install -e .
 
-Usage: certchecker pathtofile privatekeypassword
+2. Usage: certchecker pathtofile privatekeypassword
 
 The program should output if the cert is valid or not.
